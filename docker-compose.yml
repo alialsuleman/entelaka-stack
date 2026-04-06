@@ -6,10 +6,10 @@ services:
     container_name: entelaka-mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 
-      MYSQL_DATABASE: 
-      MYSQL_USER: 
-      MYSQL_PASSWORD:  
+      #MYSQL_ROOT_PASSWORD: 
+      #MYSQL_DATABASE: 
+      #MYSQL_USER: 
+      #MYSQL_PASSWORD:  
     ports:
       - "3306:3306"
     volumes:
@@ -32,9 +32,9 @@ services:
       mysql:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL:  
-      SPRING_DATASOURCE_USERNAME: 
-      SPRING_DATASOURCE_PASSWORD: 
+      #SPRING_DATASOURCE_URL:  
+      #SPRING_DATASOURCE_USERNAME: 
+      #SPRING_DATASOURCE_PASSWORD: 
 
   node-chat:
     build:
