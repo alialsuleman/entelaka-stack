@@ -14,5 +14,7 @@ cd entelaka-docker
 - config/spring/firebase-service-account.json
 - config/node/.env
 
+and edit database credentials in docker-compose.yml
+
 # Build and run
 docker-compose up -d --build
