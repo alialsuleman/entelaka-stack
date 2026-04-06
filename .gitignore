@@ -1,0 +1,24 @@
+# Docker volumes data
+/data/
+/box/
+
+# Judge0 (لاحقاً)
+/judge0/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets and configs  
+config/spring/*.json
+config/node/.env
+
+# Logs
+*.log
+docker-compose.override.yml
