@@ -9,10 +9,10 @@ git clone https://github.com/alialsuleman/entelaka-stack.git
 cd entelaka-docker
 
 # Place required config files:
-# - config/spring/application.properties
-# - config/spring/firebase-service-account-dev.json
-# - config/spring/firebase-service-account.json
-# - config/node/.env
+- config/spring/application.properties
+- config/spring/firebase-service-account-dev.json
+- config/spring/firebase-service-account.json
+- config/node/.env
 
 # Build and run
 docker-compose up -d --build
