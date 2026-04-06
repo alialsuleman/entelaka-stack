@@ -1,14 +1,15 @@
-#   Maven
+# GitHub
+FROM alpine/git:latest AS git-clone
+WORKDIR /temp
+RUN git clone https://github.com/alialsuleman/entelaka.git .
+
+#  Maven
 FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
+#  git-clone
+COPY --from=git-clone /temp /app
 
-#   GitHub
-RUN apk add --no-cache git && \
-    git clone https://github.com/alialsuleman/entelaka.git .
-
-
-# 
-#  config/spring
+#  
 COPY config/spring/application.properties src/main/resources/
 COPY config/spring/firebase-service-account-dev.json src/main/resources/
 COPY config/spring/firebase-service-account.json src/main/resources/
