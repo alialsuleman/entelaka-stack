@@ -1,21 +1,21 @@
-# مرحلة البناء باستخدام Maven
+#   Maven
 FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
 
-# استنساخ الكود من GitHub
+#   GitHub
 RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/alialsuleman/entelaka.git .
 
-# نسخ ملفات الإعدادات المخصصة إلى المسار الصحيح داخل المصدر
-# (هذه الملفات موجودة على الهوست في config/spring/)
+# 
+#  config/spring
 COPY config/spring/application.properties src/main/resources/
 COPY config/spring/firebase-service-account-dev.json src/main/resources/
 COPY config/spring/firebase-service-account.json src/main/resources/
 
-# بناء التطبيق (تخطي الاختبارات لتسريع البناء)
+# Build
 RUN mvn clean package -DskipTests
 
-# مرحلة التشغيل
+# Run
 FROM openjdk:17.0.1-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
