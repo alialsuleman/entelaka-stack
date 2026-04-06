@@ -1,9 +1,8 @@
 
-config/spring/*
+config/spring/*.json
+config/spring/*.properties
 
-
-config/node/*
-
+config/node/.env
 
 data/*
 !data/.gitkeep
