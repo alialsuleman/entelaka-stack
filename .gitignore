@@ -1,23 +1,28 @@
-# Docker volumes data
-/data/
-/box/
 
-# Judge0 (لاحقاً)
-/judge0/
 
-# IDE
+config/spring/*
+
+
+config/node/*
+
+
+data/*
+!data/.gitkeep
+box/*
+!box/.gitkeep
+
+
+judge0/*
+!judge0/.gitkeep
+
+# IDE files
 .vscode/
 .idea/
 *.swp
-*.swo
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
-
-# Secrets and configs  
-config/spring/*.json
-config/node/.env
 
 # Logs
 *.log
